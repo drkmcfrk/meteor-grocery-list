@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Items } from '../../../api/items.js';
 
+import AddItem from './AddItem/AddItem';
 import Item from './Item/Item';
 import Aux from '../../hoc/Aux/Aux';
 
@@ -74,7 +75,7 @@ class GroceryList extends Component {
 
 		return (
 			<div className={styles.groceryList}>
-				<Item add addItem={this.addItemHandler} />
+				<AddItem addItem={this.addItemHandler} />
 				{itemList}
 			</div>
 		);
