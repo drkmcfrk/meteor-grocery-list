@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Aux from '../../../hoc/Aux/Aux';
 import Input from '@material-ui/core/Input';
@@ -7,6 +7,13 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 import styles from './AddItem.m.css';
 
+/**
+ * AddItem component provides the user with inputs to add new items
+ * to the 'items' collection.
+ *
+ * @version 1.0.0
+ * @author [Derrik Fleming](https://github.com/drkmcfrk)
+ */
 class AddItem extends Component {
 	constructor(props) {
 		super(props);

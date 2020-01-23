@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { IconButton } from '@material-ui/core';
 
 import Typography from '@material-ui/core/Typography';
@@ -8,31 +8,31 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 import styles from './ItemControls.m.css';
 
-class ItemControls extends Component {
-	render() {
-		return (
-			<div className={styles.controls}>
-				<IconButton
-					disabled={!this.props.decrementable}
-					onClick={() =>
-						this.props.decrementItem(this.props.id, this.props.qty)
-					}
-				>
-					<RemoveIcon color="primary" />
-				</IconButton>
-				<IconButton
-					onClick={() =>
-						this.props.incrementItem(this.props.id, this.props.qty)
-					}
-				>
-					<AddIcon color="primary" />
-				</IconButton>
-				<IconButton onClick={() => this.props.deleteItem(this.props.id)}>
-					<DeleteIcon color="primary" />
-				</IconButton>
-			</div>
-		);
-	}
-}
+/**
+ * ItemContorols  provides the user with inputs (Buttons) to Update
+ *  and/or Delete an existing item in the 'items' collection.
+ *
+ * @version 1.0.0
+ * @author [Derrik Fleming](https://github.com/drkmcfrk)
+ */
 
-export default ItemControls;
+const itemControls = props => {
+	return (
+		<div className={styles.controls}>
+			<IconButton
+				disabled={!props.decrementable}
+				onClick={() => props.decrementItem(props.id, props.qty)}
+			>
+				<RemoveIcon color="primary" />
+			</IconButton>
+			<IconButton onClick={() => props.incrementItem(props.id, props.qty)}>
+				<AddIcon color="primary" />
+			</IconButton>
+			<IconButton onClick={() => props.deleteItem(props.id)}>
+				<DeleteIcon color="primary" />
+			</IconButton>
+		</div>
+	);
+};
+
+export default itemControls;

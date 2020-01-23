@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -8,29 +8,37 @@ import ItemControls from './ItemControls/ItemControls';
 
 import styles from './Item.m.css';
 
-class Item extends Component {
-	render() {
-		return (
-			<Aux>
-				<div className={styles.item}>
-					<Typography variant="h6" className={styles.nameLabel}>
-						{this.props.itemName}
-					</Typography>
-					<Typography variant="h6" className={styles.qtyLabel}>
-						{this.props.itemQty}
-					</Typography>
-					<ItemControls
-						incrementItem={this.props.itemQtyIncremented}
-						decrementItem={this.props.itemQtyDecremented}
-						decrementable={this.props.decrementable}
-						deleteItem={this.props.itemDeleted}
-						id={this.props.itemId}
-						qty={this.props.itemQty}
-					/>
-				</div>
-			</Aux>
-		);
-	}
-}
+/**
+ * ListItem provides the mechanism for displaying
+ * the data fields of existing Item in the 'items' collection.
+ * It also serves as a container for the ItemControls ('./ItemControls.js')
+ * for Updating, and Deleting the item.
+ *
+ * @version 1.0.0
+ * @author [Derrik Fleming](https://github.com/drkmcfrk)
+ */
 
-export default Item;
+const item = props => {
+	return (
+		<Aux>
+			<div className={styles.item}>
+				<Typography variant="h6" className={styles.nameLabel}>
+					{props.itemName}
+				</Typography>
+				<Typography variant="h6" className={styles.qtyLabel}>
+					{props.itemQty}
+				</Typography>
+				<ItemControls
+					incrementItem={props.itemQtyIncremented}
+					decrementItem={props.itemQtyDecremented}
+					decrementable={props.decrementable}
+					deleteItem={props.itemDeleted}
+					id={props.itemId}
+					qty={props.itemQty}
+				/>
+			</div>
+		</Aux>
+	);
+};
+
+export default item;
