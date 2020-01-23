@@ -1,0 +1,10 @@
+.controls {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 5px 0;
+}
+
+.controls IconButton {
+	flex: 1;
+}
